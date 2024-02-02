@@ -25,6 +25,11 @@ public class SimpleToDoItem implements IToDoItem, ITaskComponent {
 	}
 
 	@Override
+	public Priority getPriority() {
+		return null;
+	}
+
+	@Override
 	public void addTask(ITaskComponent task) {
 		// Do nothing, as SimpleToDoItems cannot contain subtasks
 		//throw new UnsupportedOperationException("SimpleToDoItem cannot contain subtasks");

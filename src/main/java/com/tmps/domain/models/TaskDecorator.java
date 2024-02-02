@@ -23,5 +23,15 @@ public abstract class TaskDecorator implements IToDoItem {
 		decoratedTask.setCompleted(completed);
 	}
 
+	@Override
+	public Priority getPriority() {
+		return decoratedTask.getPriority();
+	}
+
+	@Override
+	public void printData() {
+		decoratedTask.printData();
+	}
+
 	// ... other delegated methods
 }

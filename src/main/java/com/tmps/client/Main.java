@@ -4,11 +4,12 @@ import com.tmps.domain.models.*;
 
 public class Main {
     public static void main(String[] args) {
-        IToDoItemRepository repository = new InMemoryToDoItemRepository(); // Injectable
+        IToDoItemRepository repository = new DiskRepository(); // Injectable
         TaskList taskList = TaskList.getInstance(repository);
         UserInterface ui = new UserInterface(taskList);
 
 //        ui.test();
-        ui.test_groups();
+        ui.use();
+//        ui.test_groups();
     }
 }
