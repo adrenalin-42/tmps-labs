@@ -4,7 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TaskList implements IToDoItemAdder, IToDoItemRemover {
+	private static TaskList instance = null;
 	private List<ToDoItem> items;
+
+	public static TaskList getInstance(IToDoItemRepository repository) {
+		if (instance == null) {
+			instance = new TaskList(repository);
+		}
+		return instance;
+	}
 
 	public TaskList(IToDoItemRepository repository) {
 		items = repository.getAllItems();

@@ -1,7 +1,7 @@
 package com.tmps.client;
 
+import com.tmps.domain.factory.ToDoItemBuilder;
 import com.tmps.domain.models.Priority;
-import com.tmps.domain.models.PriorityToDoItem;
 import com.tmps.domain.models.TaskList;
 import com.tmps.domain.models.ToDoItem;
 
@@ -13,13 +13,12 @@ public class UserInterface {
 	}
 
 	public void test() {
-		//TaskList taskList = new TaskList();
-		taskList.addItem(new ToDoItem("Buy groceries"));
-		taskList.addItem(new PriorityToDoItem("Finish project", Priority.HIGH));
+		taskList.addItem(new ToDoItemBuilder().description("Buy groceries").build());
+		taskList.addItem(new ToDoItemBuilder().completed(true).description("Finish project").priority(Priority.HIGH).build());
 
 		// Process items without breaking functionality, regardless of their type
 		for (ToDoItem item : taskList.getItems()) {
-			System.out.println(item.getDescription());
+			System.out.println(item.getDescription() + " status: " + (item.isCompleted() ? "completed" : "not completed"));
 		}
 	}
 
