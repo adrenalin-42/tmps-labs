@@ -1,11 +1,10 @@
 package com.tmps.domain.models;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TaskList implements IToDoItemAdder, IToDoItemRemover {
 	private static TaskList instance = null;
-	private List<ToDoItem> items;
+	private List<IToDoItem> items;
 
 	public static TaskList getInstance(IToDoItemRepository repository) {
 		if (instance == null) {
@@ -19,16 +18,16 @@ public class TaskList implements IToDoItemAdder, IToDoItemRemover {
 	}
 
 	@Override
-	public void addItem(ToDoItem item) {
+	public void addItem(IToDoItem item) {
 		items.add(item);
 	}
 
 	@Override
-	public void removeItem(ToDoItem item) {
+	public void removeItem(SimpleToDoItem item) {
 		items.remove(item);
 	}
 
-	public List<ToDoItem> getItems() {
+	public List<IToDoItem> getItems() {
 		return this.items;
 	}
 

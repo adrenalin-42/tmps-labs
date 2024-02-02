@@ -3,7 +3,7 @@ package com.tmps.domain.models;
 import java.util.List;
 
 public interface IToDoItemRepository {
-	List<ToDoItem> getAllItems();
-	void saveItem(ToDoItem item);
-	void removeItem(ToDoItem item);
+	List<IToDoItem> getAllItems();
+	void saveItem(IToDoItem item);
+	void removeItem(IToDoItem item);
 }

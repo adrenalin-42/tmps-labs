@@ -8,6 +8,7 @@ public class Main {
         TaskList taskList = TaskList.getInstance(repository);
         UserInterface ui = new UserInterface(taskList);
 
-        ui.test();
+//        ui.test();
+        ui.test_groups();
     }
 }

@@ -1,5 +1,5 @@
 package com.tmps.domain.models;
 
 public interface IToDoItemRemover {
-	void removeItem(ToDoItem item);
+	void removeItem(SimpleToDoItem item);
 }

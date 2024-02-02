@@ -1,8 +1,8 @@
 package com.tmps.domain.factory;
 
 import com.tmps.domain.models.Priority;
-import com.tmps.domain.models.PriorityToDoItem;
-import com.tmps.domain.models.ToDoItem;
+import com.tmps.domain.models.PrioritySimpleToDoItem;
+import com.tmps.domain.models.SimpleToDoItem;
 
 public class ToDoItemBuilder {
 	private String description;
@@ -24,11 +24,11 @@ public class ToDoItemBuilder {
 		return this;
 	}
 
-	public ToDoItem build() {
+	public SimpleToDoItem build() {
 		// Validate data if needed
 		if (priority == null) {
-			return new ToDoItem(description, completed);
+			return new SimpleToDoItem(description, completed);
 		}
-		return new PriorityToDoItem(description, completed, priority);
+		return new PrioritySimpleToDoItem(description, completed, priority);
 	}
 }

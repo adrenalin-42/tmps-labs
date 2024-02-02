@@ -5,19 +5,19 @@ import java.util.List;
 
 public class InMemoryToDoItemRepository implements IToDoItemRepository {
 
-	List<ToDoItem> items = new ArrayList<>();
+	List<IToDoItem> items = new ArrayList<>();
 	@Override
-	public List<ToDoItem> getAllItems() {
+	public List<IToDoItem> getAllItems() {
 		return items;
 	}
 
 	@Override
-	public void saveItem(ToDoItem item) {
+	public void saveItem(IToDoItem item) {
 		items.add(item);
 	}
 
 	@Override
-	public void removeItem(ToDoItem item) {
+	public void removeItem(IToDoItem item) {
 		items.remove(item);
 	}
 }

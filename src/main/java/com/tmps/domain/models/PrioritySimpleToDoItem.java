@@ -1,9 +1,9 @@
 package com.tmps.domain.models;
 
-public class PriorityToDoItem extends ToDoItem {
+public class PrioritySimpleToDoItem extends SimpleToDoItem {
 	private Priority priority;
 
-	public PriorityToDoItem(String taskDescription, boolean completed, Priority priorityLevel) {
+	public PrioritySimpleToDoItem(String taskDescription, boolean completed, Priority priorityLevel) {
 		super(taskDescription, completed);
 		this.priority = priorityLevel;
 	}
